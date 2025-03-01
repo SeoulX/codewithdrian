@@ -1,8 +1,8 @@
-// import Hero from "@/components/hero"
-// import About from "@/components/about"
-// import Skills from "@/components/skills"
-// import Projects from "@/components/projects"
-// import Contact from "@/components/contact"
+import Hero from "@/components/hero"
+import About from "@/components/about"
+import Skills from "@/components/skills"
+import Projects from "@/components/projects"
+import Contact from "@/components/contact"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -14,11 +14,11 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className="min-h-screen bg-white dark:bg-gray-950">
-      {/* <Hero />
+      <Hero />
       <About />
       <Skills />
       <Projects />
-      <Contact /> */}
+      <Contact />
     </main>
   )
 }
