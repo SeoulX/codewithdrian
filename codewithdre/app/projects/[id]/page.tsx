@@ -7,11 +7,10 @@ import { Badge } from "@/components/ui/badge"
 import { getProjectById } from "@/lib/projects"
 import type { Metadata } from "next"
 
-interface ProjectPageProps {
-  params: {
-    id: string
-  }
-}
+type ProjectPageProps = {
+  params: Awaited<{ id: string }>; // Ensures 'params' is resolved
+};
+
 
 export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
   const project = await getProjectById(Number.parseInt(params.id))
