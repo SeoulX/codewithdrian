@@ -8,8 +8,8 @@ export interface Skills {
   skills: string[]
 }
 
-export async function getAllSkills(): Promise<User[]> {
+export async function getAllSkills(): Promise<Skills[]> {
   const client = await clientPromise
   const db = client.db("Portfolio")
-  return db.collection("skills").find({}).toArray() as Promise<User[]>
+  return db.collection("skills").find({}).toArray() as Promise<Skills[]>
 }
