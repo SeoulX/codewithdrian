@@ -57,7 +57,7 @@ export default function Navbar() {
               </Link>
             ))}
             <ThemeToggle />
-            <a href="/CV_Biñas_Andrian.pdf" download="Andrian_Binas_Resume.pdf">
+            <a href="files/CV_Biñas_Andrian.pdf" download="Andrian_Binas_Resume.pdf">
               <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white">
                 Resume
               </Button>

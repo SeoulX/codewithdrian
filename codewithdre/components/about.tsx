@@ -19,7 +19,7 @@ export default function About() {
           <div className="relative aspect-square max-w-md mx-auto md:mx-0">
             <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl transform rotate-3"></div>
             <Image
-              src="/profile.png"
+              src="/img/profile.png"
               alt="Andrian Biñas"
               width={400}
               height={400}
