@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  reactStrictMode: true,
+  images: {
+    unoptimized: true, // Ensures images work correctly on AWS Amplify
+  },
 };
 
 export default nextConfig;
