@@ -4,7 +4,7 @@ from datetime import datetime
 
 # Connect to MongoDB
 client = pymongo.MongoClient("mongodb://localhost:27017/")
-db = client["portfolio"]
+db = client["Portfolio"]
 
 # Sample project data
 projects = [

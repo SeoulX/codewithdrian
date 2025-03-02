@@ -1,15 +1,26 @@
 "use client"
 
 import type React from "react"
-
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, Phone, MapPin, Send } from "lucide-react"
+import type { User } from "@/lib/user"
 
 export default function Contact() {
+  const [user, setUser] = useState<User | null>(null)
+  
+    useEffect(() => {
+      async function fetchUser() {
+        const response = await fetch("/api/user")
+        const data = await response.json()
+        setUser(data[0])
+      }
+      fetchUser()
+    }, [])
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -27,9 +38,6 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-
-    // This would typically send data to a MongoDB database via a Python backend
-    // Simulating API call
     try {
       await new Promise((resolve) => setTimeout(resolve, 1500))
       setSubmitSuccess(true)
@@ -68,7 +76,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-medium text-gray-900 dark:text-white">Email</h4>
-                  <p className="text-gray-700 dark:text-gray-300">johndoe@example.com</p>
+                  <p className="text-gray-700 dark:text-gray-300">{user?.email}</p>
                 </div>
               </div>
 
@@ -78,7 +86,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-medium text-gray-900 dark:text-white">Phone</h4>
-                  <p className="text-gray-700 dark:text-gray-300">+1 (123) 456-7890</p>
+                  <p className="text-gray-700 dark:text-gray-300">{user?.contact}</p>
                 </div>
               </div>
 
@@ -88,7 +96,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-medium text-gray-900 dark:text-white">Location</h4>
-                  <p className="text-gray-700 dark:text-gray-300">San Francisco, CA</p>
+                  <p className="text-gray-700 dark:text-gray-300">{user?.location}</p>
                 </div>
               </div>
             </div>

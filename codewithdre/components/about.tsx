@@ -7,20 +7,20 @@ import { Github, Linkedin, Twitter } from "lucide-react"
 
 export default function About() {
   return (
-    <section id="about" className="py-20 bg-gray-50 dark:bg-gray-900">
-      <div className="container px-4 md:px-6 mx-auto">
+    <section id="about" className="py-20 bg-gray-50 dark:bg-gray-900 flex justify-center items-center">
+      <div className="container px-8 md:px-12 lg:px-0 mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+          className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center"
         >
           <div className="relative aspect-square max-w-md mx-auto md:mx-0">
             <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl transform rotate-3"></div>
             <Image
-              src="/placeholder.svg?height=400&width=400"
-              alt="John Doe"
+              src="/profile.png"
+              alt="Andrian Biñas"
               width={400}
               height={400}
               className="relative rounded-2xl object-cover z-10 transform -rotate-3 transition-transform duration-300 hover:rotate-0"

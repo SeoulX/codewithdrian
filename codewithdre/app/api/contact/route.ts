@@ -1,10 +1,5 @@
 import { NextResponse } from "next/server"
-import { MongoClient } from "mongodb"
-
-// This would connect to your MongoDB instance
-// In a real application, you would use environment variables for the connection string
-const uri = process.env.MONGODB_URI || "mongodb://localhost:27017/portfolio"
-const client = new MongoClient(uri)
+import clientPromise from "@/lib/mongodb"
 
 export async function POST(request: Request) {
   try {
@@ -17,9 +12,9 @@ export async function POST(request: Request) {
     }
 
     // Connect to MongoDB
-    await client.connect()
-    const database = client.db("portfolio")
-    const messages = database.collection("messages")
+    const client = await clientPromise
+    const db = client.db("Portfolio")
+    const messages = db.collection("messages")
 
     // Insert the message into the database
     const result = await messages.insertOne({
@@ -34,9 +29,6 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error("Error saving message:", error)
     return NextResponse.json({ error: "Failed to save message" }, { status: 500 })
-  } finally {
-    // Close the connection
-    await client.close()
   }
 }
 

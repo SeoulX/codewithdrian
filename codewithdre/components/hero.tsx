@@ -5,8 +5,21 @@ import { motion } from "framer-motion"
 import { ArrowDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import type { User } from "@/lib/user"
 
 export default function Hero() {
+  const [user, setUser] = useState<User | null>(null)
+
+  useEffect(() => {
+    async function fetchUser() {
+      const response = await fetch("/api/user")
+      const data = await response.json()
+      console.log("API Response:", data)
+      setUser(data[0])
+    }
+    fetchUser()
+  }, [])
+
   const [scrollY, setScrollY] = useState(0)
 
   useEffect(() => {
@@ -33,10 +46,10 @@ export default function Hero() {
           className="text-center"
         >
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
-            John Doe
+            {user ? user.name : "Loading..."}
           </h1>
           <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-            Computer Science Professional & Full-Stack Developer
+            Computer Science Student & Full-Stack Developer
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="#projects">
