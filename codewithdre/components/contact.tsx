@@ -80,6 +80,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
+            {...({} as any)}
           >
             <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Contact Information</h3>
 
@@ -141,6 +142,7 @@ export default function Contact() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
             className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md border border-gray-100 dark:border-gray-700"
+            {...({} as any)}
           >
             <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Send Me a Message</h3>
 

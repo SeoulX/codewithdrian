@@ -52,7 +52,7 @@ export default function Projects() {
           </div>
         </div>
 
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"{...({} as any)}>
           {filteredProjects.map((project) => (
             <motion.div
               key={project._id.toString()}
@@ -62,6 +62,7 @@ export default function Projects() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5 }}
               className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow"
+              {...({} as any)}
             >
               <div className="relative h-48 overflow-hidden">
                 <Image
@@ -90,7 +91,7 @@ export default function Projects() {
                     <Github className="h-4 w-4" />
                     Code
                   </Button>
-                  <Link href={`/projects/${project.id}`}>
+                  <Link href={`#`}>
                     <Button size="sm" className="flex items-center gap-1 bg-gradient-to-r from-purple-600 to-pink-600">
                       <ExternalLink className="h-4 w-4" />
                       View Details

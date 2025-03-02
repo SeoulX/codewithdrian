@@ -15,6 +15,7 @@ export default function About() {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center"
+          {...({} as any)}
         >
           <div className="relative aspect-square max-w-md mx-auto md:mx-0">
             <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl transform rotate-3"></div>

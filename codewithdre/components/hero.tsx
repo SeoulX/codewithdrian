@@ -44,6 +44,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-center"
+          {...({} as any)}
         >
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
             {user ? user.name : "Loading..."}
@@ -71,6 +72,7 @@ export default function Hero() {
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1.5 }}
+        {...({} as any)}
       >
         <Link href="#about" aria-label="Scroll to About section">
           <ArrowDown className="h-6 w-6 text-gray-700 dark:text-gray-300" />

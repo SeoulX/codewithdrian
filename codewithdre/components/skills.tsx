@@ -67,12 +67,14 @@ export default function Skills() {
             whileInView="visible"
             viewport={{ once: true }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+            {...({} as any)}
           >
             {skills.map((skill, index) => (
               <motion.div
                 key={index}
                 variants={itemVariants}
                 className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-shadow"
+                {...({} as any)}
               >
                 <div className="flex items-center mb-4">
                   <div className="p-2 bg-gradient-to-br from-purple-600 to-pink-600 rounded-md text-white mr-3">
