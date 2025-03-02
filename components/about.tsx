@@ -31,12 +31,12 @@ export default function About() {
           <div>
             <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">About Me</h2>
             <p className="text-gray-700 dark:text-gray-300 mb-6">
-              I'm a passionate Computer Science professional with expertise in full-stack development. With a strong
+              I'm a passionate Computer Science student with expertise in full-stack development. With a strong
               foundation in algorithms, data structures, and software architecture, I create elegant solutions to
               complex problems.
             </p>
             <p className="text-gray-700 dark:text-gray-300 mb-6">
-              My journey in tech began at [University Name], where I earned my degree in Computer Science. Since then,
+              My journey in tech began at Technological Institute of the Philippines, where I earned my degree in Computer Science. Since then,
               I've worked with various technologies including React.js, Python, and MongoDB to build scalable and
               efficient applications.
             </p>
