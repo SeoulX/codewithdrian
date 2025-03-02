@@ -57,9 +57,11 @@ export default function Hero() {
                 View Projects
               </Button>
             </Link>
-            <Button variant="outline" className="border-gray-300 dark:border-gray-700">
-              Download Resume
-            </Button>
+            <a href="/CV_Biñas_Andrian.pdf" download="Andrian_Binas_Resume.pdf">
+              <Button variant="outline" className="border-gray-300 dark:border-gray-700">
+                Download Resume
+              </Button>
+            </a>
           </div>
         </motion.div>
       </div>
