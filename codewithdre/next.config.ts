@@ -2,10 +2,10 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  output: "standalone", // Important for AWS Amplify
   images: {
-    unoptimized: true, // Required for Amplify
+    unoptimized: true, // Required since Amplify does not support Next.js Image Optimization
   },
-  trailingSlash: true, // Helps with routing issues
 };
 
 export default nextConfig;
